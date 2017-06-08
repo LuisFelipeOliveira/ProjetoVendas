@@ -12,11 +12,9 @@ public class ArqMan {
 			oos.close();
 			fos.close();
 		} catch (FileNotFoundException e) {
-
-			e.printStackTrace();
+			System.out.println("Arquivo nao encontrado!"); ;
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Erro!!");
 		}
 	}
 
@@ -33,7 +31,7 @@ public class ArqMan {
 
 		} catch (FileNotFoundException e) {
 
-			e.printStackTrace();
+			System.out.println("erro");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
