@@ -1,4 +1,5 @@
-# Projeto - Sistema de Vendas (Luís Felipe Oliveira de Araújo e Henrique Luís de Carvalho Santos)
+# Projeto - Sistema de Vendas 
+(Luís Felipe Oliveira de Araújo - Henrique Luís de Carvalho Santos - Luís Eduardo Silva Costa)
 
 Repositório destinado ao Projeto do 3º estágio da disciplina Metodologia e Linguagem de Programação, ministrada por Rodrigo Fujioka.
 
