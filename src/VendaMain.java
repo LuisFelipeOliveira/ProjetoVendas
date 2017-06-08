@@ -27,7 +27,8 @@ public class VendaMain {
 					try {
 						arq.salvar(venda, "vendas/" + venda.getVendedor().getNome());
 					} catch (FileNotFoundException e) {
-						
+						System.out.println("Nao foi possivel ler os dados.");
+						menu.menu1();
 					}
 					menu.menu2();
 					
@@ -46,6 +47,7 @@ public class VendaMain {
 						arq.salvar(vendedor, "vendedores/" + vendedor.getCodigo());
 					} catch (FileNotFoundException e) {
 						System.out.println("Nao foi possivel ler os dados.");
+						menu.menu1();
 					}
 					vendedor.exibeVendedor(vendedor);
 					menu.menu2();
@@ -60,6 +62,7 @@ public class VendaMain {
 						arq.salvar(produto, "produtos/" + produto.getCodProduto());
 					} catch (FileNotFoundException e) {
 						System.out.println("Nao foi possivel ler os dados.");
+						menu.menu1();
 					}
 					
 					produto.mostraProduto(produto);

@@ -42,7 +42,6 @@ public class MenuVendas {
 		vassourinha();
 		System.out.println("------------------------------------------\n");
 		System.out.println("1 - Menu Principal");
-		System.out.println("\n2 - Novo registro");
 		System.out.println("\n>>");
 		
 		setOpt2(leitor.nextInt());
