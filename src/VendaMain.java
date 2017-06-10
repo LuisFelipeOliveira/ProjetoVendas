@@ -7,22 +7,25 @@ public class VendaMain {
 		MenuVendas menu = new MenuVendas();
 		Vendedor vendedor = new Vendedor();
 		Produto produto = new Produto();
-		Venda venda = new Venda();
+		Venda venda = new Venda(); 
 		ArqMan arq = new ArqMan();
 
 
-		while (menu.getOpt() != 4) {
+		do{
 
-			menu.setOpt2(2);
+			menu.setOpt2("2");
 			menu.vassourinha();
 			menu.menu1();
 			switch (menu.getOpt()) {
 
-			case 1: // Registrando uma Venda
+			case "1": // Registrando uma Venda
 
-				while (menu.getOpt2() == 2) {
-
-					venda.registrarVenda(venda);
+				while (menu.getOpt2() == "2") {
+					
+					if(venda.registrarVenda(venda) == null){
+						break;
+					}
+					
 					venda.mostrarVenda(venda);
 					try {
 						arq.salvar(venda, "vendas/" + venda.getVendedor().getNome());
@@ -37,9 +40,9 @@ public class VendaMain {
 				}
 				break;
 
-			case 2: // Registrando um novo Vendedor
+			case "2": // Registrando um novo Vendedor
 
-				while (menu.getOpt2() == 2) {
+				while (menu.getOpt2() == "2") {
 
 					menu.vassourinha();
 					vendedor.cadastroVendedor(vendedor);
@@ -54,9 +57,9 @@ public class VendaMain {
 				}
 				break;
 
-			case 3: // Registrando um novo Produto
+			case "3": // Registrando um novo Produto
 
-				while (menu.getOpt2() == 2) {
+				while (menu.getOpt2() == "2") {
 					produto.criarProduto(produto);
 					try {
 						arq.salvar(produto, "produtos/" + produto.getCodProduto());
@@ -71,14 +74,14 @@ public class VendaMain {
 				}
 				break;
 
-			case 4: // Saindo do sistema
-				System.exit(0);
+			case "4": // Saindo do sistema
+				menu.setLoop(false);
 
 			default:
-				System.out.println("Informe um valor dentre as opcoes: ");
+				System.out.println("Informe um valor dentre as opcoes!!");
 				break;
 			}
-		}
+		}while (menu.isLoop()) ;
 	}
 
 }

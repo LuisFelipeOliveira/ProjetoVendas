@@ -52,7 +52,6 @@ public class Vendedor implements Serializable{
 		System.out.println("\n- Endereco: ");
 		vendedor.setEndereco(leitor.nextLine());
 		
-		leitor.close();
 		
 		return vendedor;
 	}

@@ -7,8 +7,8 @@ public class Venda implements Serializable{
 	public Produto produto = new Produto();
 	public ArrayList<Produto> produtos = new ArrayList<>();
 	public Vendedor vendedor;
-	int aux = 0, i = 0, quantidadeItens, quantidadeItensFinal;
-	float desconto = 2, valorComissaoFinal, valorFinal, valor, valorComissao;	
+	int aux = 0, i = 0, quantidadeItens = 0, quantidadeItensFinal = 0;
+	float desconto = 2, valorComissaoFinal = 0, valorFinal = 0, valor = 0, valorComissao = 0;	
 	
 	public ArrayList<Produto> getProdutos() {
 		return produtos;
@@ -23,7 +23,6 @@ public class Venda implements Serializable{
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-	
 	
 	public Vendedor getVendedor() {
 		return vendedor;
@@ -85,14 +84,26 @@ public class Venda implements Serializable{
 		System.out.println("\n- Codigo do vendedor: ");
 		venda.setVendedor((Vendedor) arq.lerObjeto("vendedores/" + leitor.nextLine()));
 		
+		if(venda.getVendedor() == null){
+			System.out.println("vendedor n encontrado");
+			return null;
+		}
+		
+		
 		while(aux==0){
 		//valor final a se pagar
 			System.out.println("\n- Codigo do Produto: ");
-			//ADICIONAR NOT FOUND EXCEPTION
+			
 			venda.produto = ((Produto) arq.lerObjeto("produtos/" + leitor.nextLine()));
-		
-			System.out.println("\n- Qtd:");
-			venda.quantidadeItens = leitor2.nextInt();
+				
+			try{
+				
+				System.out.println("\n- Qtd:");
+				venda.quantidadeItens = leitor2.nextInt();
+				
+			} catch(InputMismatchException e){
+				System.out.println("Digite um valor valido!");
+			}
 			venda.produtos.add(venda.getProduto());
 			venda.calcularValor();
 			venda.calcularComissao();

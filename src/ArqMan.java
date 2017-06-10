@@ -31,6 +31,7 @@ public class ArqMan {
 
 		} catch (FileNotFoundException e) {
 			System.out.println("Nao foi possivel encontrar o arquivo.");
+			
 		} catch (IOException e) {
 			System.out.println("Erro!!");
 		} catch (ClassNotFoundException e) {

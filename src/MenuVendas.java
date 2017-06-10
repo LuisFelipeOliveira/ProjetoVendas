@@ -2,27 +2,38 @@ import java.util.*;
 
 public class MenuVendas {
 	
-	public int opt;
-	public int opt2 = 2;
+	public String opt;
+	public String opt2 = "2";
+	private boolean  loop = true;
 	Scanner leitor = new Scanner(System.in);
 	
-	public int getOpt() {
+	
+	
+	public boolean isLoop() {
+		return loop;
+	}
+
+	public void setLoop(boolean loop) {
+		this.loop = loop;
+	}
+
+	public String getOpt() {
 		return opt;
 	}
 	
-	public void setOpt(int opt) {
+	public void setOpt(String opt) {
 		this.opt = opt;
 	}
 
-	public int getOpt2() {
+	public String getOpt2() {
 		return opt2;
 	}
 
-	public void setOpt2(int opt2) {
-		this.opt2 = opt2;
+	public void setOpt2(String i) {
+		this.opt2 = i;
 	}
 
-	public int menu1(){
+	public String menu1(){
 		System.out.println("--------------------Menu Principal--------------------");
 		System.out.println("\n1 - Cadastrar Venda");
 		System.out.println("\n2 - Cadastrar novo Vendedor");
@@ -31,20 +42,20 @@ public class MenuVendas {
 		System.out.println("\n>>");
 		
 		try{
-		setOpt(leitor.nextInt());
+		setOpt(leitor.nextLine());
 		}catch (InputMismatchException e) {
 			System.out.println("Digite apenas números!!");
 		}
 		return opt;
 	}
 	
-	public int menu2(){
+	public String menu2(){
 		vassourinha();
 		System.out.println("------------------------------------------\n");
 		System.out.println("1 - Menu Principal");
 		System.out.println("\n>>");
 		
-		setOpt2(leitor.nextInt());
+		setOpt2(leitor.nextLine());
 		
 		return opt2;
 	}
@@ -55,7 +66,7 @@ public class MenuVendas {
 	
 	public void vassourinha(){
 		int i = 0;
-		while(i<10){
+		while(i<5){
 			System.out.println("\n");
 			i++;
 		}
